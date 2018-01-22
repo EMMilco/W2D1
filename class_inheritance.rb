@@ -15,6 +15,7 @@ class Employee
 
 end
 
+
 class Manager < Employee
 
   attr_reader :employees
