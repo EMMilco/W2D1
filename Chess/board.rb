@@ -2,6 +2,11 @@ require_relative 'piece'
 require_relative 'exceptions'
 
 class Board
+  attr_reader :grid
+
+  def self.valid_pos?(pos)
+    pos.all? { |coord| (0..7).cover?(coord) }
+  end
 
   def initialize
     @grid =
