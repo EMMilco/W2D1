@@ -9,7 +9,11 @@ class Piece
   end
 
   def to_s
-    symbol.colorize(background: :light_white)
+    if @pos.reduce(:+).even?
+      symbol.colorize(:background => :light_white)
+    else
+      symbol.colorize(:background => :light_black)
+    end
   end
 
 end
