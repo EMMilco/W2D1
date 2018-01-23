@@ -31,6 +31,11 @@ class Pawn < Piece
         valid_moves << next_pos if @board[next_pos].color.nil?
       end
     end
+    if @pos[0] == 1 && @color == :black
+      valid_moves << [@pos[0] + 2, @pos[1]]
+    elsif @pos[0] == 6 && @color == :white
+      valid_moves << [@pos[0] - 2, @pos[1]]
+    end
     valid_moves
   end
 

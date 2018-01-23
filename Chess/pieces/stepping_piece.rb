@@ -8,7 +8,6 @@ module SteppingPiece
       next unless Board.valid_pos?(next_pos) # checks that move isn't out of bounds
       next if @board[next_pos].color == @color # checks that move doesn't overlap our own piece
       valid_moves << next_pos
-      debugger
     end
     valid_moves
   end
