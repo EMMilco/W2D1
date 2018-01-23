@@ -12,6 +12,7 @@ class Display
   def render
 
     loop do
+      system("clear")
       colored_board = @board.grid.map.with_index do |row, i|
         row.map.with_index do |piece, j|
           if [i,j] == @cursor.cursor_pos

@@ -1,3 +1,5 @@
+require 'singleton'
+
 class NullPiece
   include Singleton
 
@@ -6,7 +8,7 @@ class NullPiece
   def initialize
 
   end
-  
+
   def symbol
     " "
   end

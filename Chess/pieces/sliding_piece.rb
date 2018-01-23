@@ -26,7 +26,7 @@ module SlidingPiece
     valid_moves_in_direction = []
     last_pos = @pos
     loop do
-      next_pos = last_pos.map.with_index { |coord, i| coord + pos_dif[i] }
+      next_pos = last_pos.map.with_index { |coord, i| coord + pos_diff[i] }
       break unless Board.valid_pos?(next_pos) # checks that move isn't out of bounds
       break if @board[next_pos].color == @color # checks that move doesn't overlap our own piece
       break if @board[last_pos].color != @color && @board[last_pos].color != nil # checks it doesn't move past enemy piece and last position was not empty
