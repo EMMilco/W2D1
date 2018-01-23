@@ -10,7 +10,6 @@ class Piece
   end
 
   def valid_moves
-    @move_diffs.map { |move| }
   end
 
 end

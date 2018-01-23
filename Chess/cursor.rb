@@ -89,7 +89,7 @@ class Cursor
 
   def update_pos(diff)
     new_pos = @cursor_pos.map.with_index { |coord, i| coord + diff[i] }
-    @cursor_pos = new_pos if new_pos.all? { |coord| (0..7).cover?(coord) }
+    @cursor_pos = new_pos if Board.valid_pos?(new_pos)
     @cursor_pos
   end
 

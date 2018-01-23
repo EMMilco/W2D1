@@ -1,10 +1,13 @@
 class NullPiece
   include Singleton
 
+  attr_reader :color
+
   def initialize
 
   end
+  
   def symbol
-    @color == :white ? " " : " "
+    " "
   end
 end
