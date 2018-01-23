@@ -6,9 +6,9 @@ end
 
 
 
-b = Board.new
-d = Display.new(b)
-player = Player.new(:white, d)
+b = Board.new;
+d = Display.new(b);
+player = Player.new(:white, d);
 
 while true
   player.make_move

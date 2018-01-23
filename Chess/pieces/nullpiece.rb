@@ -12,4 +12,13 @@ class NullPiece
   def symbol
     " "
   end
+
+  def valid_moves
+    []
+  end
+
+  def moves
+    []
+  end
+
 end

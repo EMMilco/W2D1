@@ -1,3 +1,5 @@
+require 'byebug'
+
 require_relative 'piece'
 require_relative 'exceptions'
 require_relative 'pieces/bishop.rb'
@@ -72,11 +74,41 @@ class Board
     piece.pos = end_pos
   end
 
+  def in_check?(color)
+    pieces = @grid.flatten
+    king_pos = pieces.find { |piece| piece.is_a?(King) && piece.color == color }.pos
+
+    pieces.any? do |piece|
+      # debugger
+      piece.moves.include?(king_pos)
+    end
+  end
+
+  def checkmate?(color)
+    pieces = @grid.flatten
+    one_color_pieces = pieces.select { |piece| piece.color == color }
+
+    in_check?(color) && one_color_pieces.all? do |piece|
+      piece.valid_moves.empty?
+
+    end
+  end
+
+  def dup
+    new_board = Board.new
+
+    new_board.grid = @grid.map do |row|
+      row.map do |piece|
+        piece == NullPiece.instance ? piece : piece.class.new(piece.color, new_board, piece.pos)
+      end
+    end
+
+    new_board
+  end
 
 
+  protected
 
-
-
-
+  attr_writer :grid
 
 end
