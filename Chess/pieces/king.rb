@@ -13,6 +13,9 @@ class King < Piece
                 [-1, -1],
                 [1, -1]]
 
+  def move_diffs
+    MOVE_DIFFS
+  end
 
   def symbol
     @color == :white ? "\u2654" : "\u265a"

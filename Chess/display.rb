@@ -4,6 +4,8 @@ require_relative 'board'
 
 class Display
 
+  attr_reader :board
+
   def initialize(board)
     @board = board
     @cursor = Cursor.new([4,4], board)
@@ -31,6 +33,8 @@ class Display
 
     break if @cursor.cursor_pos == @cursor.get_input
     end
+  @cursor.cursor_pos
   end
+
 
 end

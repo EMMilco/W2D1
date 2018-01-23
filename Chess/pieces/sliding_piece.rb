@@ -1,3 +1,5 @@
+require 'byebug'
+
 module SlidingPiece
 
   HORIZONTAL_DIRS = [[1, 0],

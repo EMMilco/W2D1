@@ -13,6 +13,10 @@ class Horse < Piece
                 [-2,-1],
                 [-1,-2]]
 
+  def move_diffs
+    MOVE_DIFFS
+  end
+
   def symbol
     @color == :white ? "\u2658" : "\u265e"
   end

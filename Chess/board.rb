@@ -66,9 +66,10 @@ class Board
   def move_piece(start_pos, end_pos)
     piece = self[start_pos]
     raise InvalidInputError if piece == NullPiece.instance
-    raise InvalidInputError if piece.valid_moves.include?(end_pos)
+    raise InvalidInputError unless piece.valid_moves.include?(end_pos)
     self[start_pos] = NullPiece.instance
     self[end_pos] = piece
+    piece.pos = end_pos
   end
 
 

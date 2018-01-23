@@ -5,12 +5,12 @@ class Pawn < Piece
     @color == :white ? "\u2659" : "\u265f"
   end
 
-  MOVE_DIFFS = { :white => [[-1,1], #the first three are open to white pawns
-                            [0,1],
+  MOVE_DIFFS = { :black => [[1,-1], #the first three are open to white pawns
+                            [1,0],
                             [1,1]],
-                 :black => [[-1,-1],
-                            [0,-1],
-                            [1,-1]] }
+                 :white => [[-1,-1],
+                            [-1,0],
+                            [-1,1]] }
 
 
 
